@@ -13,3 +13,7 @@ body{
 #All-task::-webkit-scrollbar{
   display: none;
 }
+
+#Tasklist::-webkit-scrollbar{
+  display: none;
+}

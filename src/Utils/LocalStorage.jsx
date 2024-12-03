@@ -1,8 +1,16 @@
-export const employeesData = [
+const employeesData = [
     {
         id: 1,
-        email: "john.doe@company.com",
+        name: "Arjun",
+        email: "arjun@company.com",
         password: "123",
+        taskCount: {
+            total: 3,
+            active: 1, // Updated active count
+            completed: 1,
+            failed: 0,
+            new: 1
+        },
         tasks: [
             {
                 id: 1,
@@ -32,7 +40,7 @@ export const employeesData = [
                 description: "Review pull requests for frontend team",
                 date: "2024-04-12",
                 category: "Development",
-                active: true,
+                active: false, // Updated
                 newTask: true,
                 completed: false,
                 failed: false
@@ -41,8 +49,16 @@ export const employeesData = [
     },
     {
         id: 2,
-        email: "sarah.smith@company.com",
+        name: "Priya",
+        email: "priya@company.com",
         password: "123",
+        taskCount: {
+            total: 4,
+            active: 2, // Updated active count
+            completed: 1,
+            failed: 0,
+            new: 1
+        },
         tasks: [
             {
                 id: 1,
@@ -61,7 +77,7 @@ export const employeesData = [
                 description: "Conduct training session on new technologies",
                 date: "2024-04-16",
                 category: "Training",
-                active: true,
+                active: false, // Updated
                 newTask: true,
                 completed: false,
                 failed: false
@@ -92,8 +108,16 @@ export const employeesData = [
     },
     {
         id: 3,
-        email: "mike.wilson@company.com",
+        name: "Rahul",
+        email: "rahul@company.com",
         password: "123",
+        taskCount: {
+            total: 5,
+            active: 2, // Updated active count
+            completed: 0,
+            failed: 1,
+            new: 2
+        },
         tasks: [
             {
                 id: 1,
@@ -112,7 +136,7 @@ export const employeesData = [
                 description: "Implement new user dashboard features",
                 date: "2024-04-15",
                 category: "Development",
-                active: true,
+                active: false, // Updated
                 newTask: true,
                 completed: false,
                 failed: false
@@ -145,7 +169,7 @@ export const employeesData = [
                 description: "Prepare for upcoming sprint planning meeting",
                 date: "2024-04-16",
                 category: "Planning",
-                active: true,
+                active: false, // Updated
                 newTask: true,
                 completed: false,
                 failed: false
@@ -154,8 +178,16 @@ export const employeesData = [
     },
     {
         id: 4,
-        email: "emma.brown@company.com",
+        name: "Neha",
+        email: "neha@company.com",
         password: "123",
+        taskCount: {
+            total: 3,
+            active: 1, // Updated active count
+            completed: 1,
+            failed: 0,
+            new: 1
+        },
         tasks: [
             {
                 id: 1,
@@ -174,7 +206,7 @@ export const employeesData = [
                 description: "Prepare presentation for client meeting",
                 date: "2024-04-15",
                 category: "Meetings",
-                active: true,
+                active: false, // Updated
                 newTask: true,
                 completed: false,
                 failed: false
@@ -194,8 +226,16 @@ export const employeesData = [
     },
     {
         id: 5,
-        email: "james.taylor@company.com",
+        name: "Vikram",
+        email: "vikram@company.com",
         password: "123",
+        taskCount: {
+            total: 4,
+            active: 1, // Updated active count
+            completed: 1,
+            failed: 0,
+            new: 1
+        },
         tasks: [
             {
                 id: 1,
@@ -214,7 +254,7 @@ export const employeesData = [
                 description: "Migrate legacy code to new framework",
                 date: "2024-04-16",
                 category: "Development",
-                active: true,
+                active: false, // Updated
                 newTask: true,
                 completed: false,
                 failed: false
@@ -245,26 +285,28 @@ export const employeesData = [
     }
 ];
 
+// Update local storage
+// localStorage.setItem('employees', JSON.stringify(employeesData));
+
+
 export const adminData = [
     {
         id: 1,
-        email: "admin@company.com",
+        name: "Raj",
+        email: "raj@company.com",
         password: "123"
     }
 ];
 
-export const setLocalStorage = () =>{
-    localStorage.setItem('employees',JSON.stringify(employeesData))
-    localStorage.setItem('admin',JSON.stringify(adminData))
+export const setLocalStorage = () => {
+    localStorage.setItem('employees', JSON.stringify(employeesData))
+    localStorage.setItem('admin', JSON.stringify(adminData))
 }
 
 export const getLocalStorage = () => {
-    const employees =JSON.parse(localStorage.getItem('employees'))
+    const employees = JSON.parse(localStorage.getItem('employees'))
     const admin = JSON.parse(localStorage.getItem('admin'))
-    return {employees,admin}
-
-
-   
-    
-
+    return { employees, admin }
 }
+
+setLocalStorage()
